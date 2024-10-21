@@ -9,6 +9,7 @@ yearReleased
 type
 attendeeName
 attendeeCompany
+genres
 `
 
 async function fetchGraphQL(query: string, preview = false): Promise<any> {

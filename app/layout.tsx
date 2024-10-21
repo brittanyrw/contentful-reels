@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Shapes from "../assets/Shapes2.svg"
 
 const inter = Inter({
   variable: '--font-inter',
@@ -28,7 +29,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body suppressHydrationWarning={true}>
+      <body style={{
+      backgroundImage: `url(${Shapes.src})`,
+      height: '100px',
+    }} suppressHydrationWarning={true}>
         <section>
           <main>{children}</main>
           <Footer />

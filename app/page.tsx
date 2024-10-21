@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { draftMode } from 'next/headers'
+import ContentfulImage from "../lib/contentful-image"
 
+import Shapes from "../assets/shapes.svg"
 import Medias from './medias'
 
 
@@ -9,14 +11,25 @@ import { getAllMediaPosts } from '@/lib/api'
 function Intro() {
   return (
     <section className="hero">
+      <div className="hero-image" style={{
+      backgroundImage: `url(${Shapes.src})`,
+      height: '100px',
+    }}></div>
+      {/* <ContentfulImage
+            src={Shapes}
+            height="100"
+            className="rounded-full"
+            alt="favorite image tag"
+          /> */}
       <h1 className="title">
         <Link href="/">
           Contentful Reels.
         </Link>
       </h1>
       <p className="intro">
-        Check out this collection of the TV shows and movies React Advanced attendees love. ❤️
+        Collection of the TV shows and movies React Advanced attendees love. ❤️
       </p>
+
     </section>
   )
 }

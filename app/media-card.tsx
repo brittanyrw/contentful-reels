@@ -8,15 +8,17 @@ export default function MediaCard({
   coverImage,
   yearReleased,
   slug,
-  type,
-  attendeeCompany
+  genres,
+  attendeeCompany,
+  type
 }: {
   title: string
   coverImage: any
   slug: string
   yearReleased: number
   type: string,
-  attendeeCompany: string
+  attendeeCompany: string,
+  genres: any
 }) {
   return (
     <div className="album">
@@ -37,7 +39,7 @@ export default function MediaCard({
                 <h4 className="album-title">{title} ({yearReleased})</h4>
               </Link>
               <ul className="music-labels">
-                <li className="category">{type}</li>
+                {genres?.map((item: string) => <li className="category" key={item}>{item}</li>)}
               </ul>
             </div>
           </div>

@@ -4,7 +4,7 @@
   /* Change these colors to update the color theme of your project */
   --primary-color: #8D6DDE;
   --secondary-color: #d16dde;
-  --accent-color: #6DDE9A;
+  --accent-color: #00c459;
   --body-background-color: #1D1D1D;
   --primary-text-color: #080808;
 }
@@ -18,7 +18,23 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 21px;
   background-color: var(--body-background-color);
+  /* background: linear-gradient(-45deg, #2b2d31,#ffda00, #e44f20, #1770e5, #00c459);
+	background-size: 300% 300%;
+	animation: gradient 15s ease infinite; */
 }
+
+/* @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} */
+
 
 p, ul, h4, h3 {
   margin: 0;
@@ -47,10 +63,10 @@ h1 {
 /* ALBUMS */
 
 .album-container {
-  background-color: var(--primary-color);
+  background-color: white;
   text-align: center;
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 35px;
 }
 
 .album {
@@ -87,12 +103,12 @@ h1 {
 .favorite {
   height: 80px;
   width: 80px;
-  background-color: var(--secondary-color);
+  background-color: #e44f20;
   border-radius: 50%;
   padding: 3px 0 0 3px;
   position: absolute;
-  top: -13px; /* 77px */
-  right: 4px;
+  top: -30px; /* 77px */
+  left: -30px;
   z-index: 99;
 }
 
@@ -105,18 +121,18 @@ h1 {
 
 .hero {
   padding: 30px;
-  background: white;
+  background: var(--primary-text-color);
   border-bottom: 3px solid var(--primary-text-color);
 }
 
 .hero h1 a {
-  color: var(--primary-text-color);
+  color: white;
   text-decoration: none;
 }
 
 .intro {
   max-width: 800px;
-  color: var(--primary-text-color);
+  color: white;
 }
 
 .home-albums .album-container {
@@ -129,8 +145,8 @@ h1 {
 
 .home-albums .album {
   background-color: white;
-  border: 1px solid black;
-  box-shadow: 5px 5px white, 7px 7px black, 12px 12px white, 13px 13px black;
+  border: 3px solid var(--primary-text-color);
+  /* box-shadow: 5px 5px white, 7px 7px black, 12px 12px white, 13px 13px black; */
   /* max-width: 350px; */
   padding: 0;
   display: flex;
@@ -157,40 +173,62 @@ h1 {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  grid-gap: 20px;
+  grid-gap: 10px;
   margin-top: 10px;
 }
 
 .music-labels li {
-  padding: 10px;
-  margin: 10px 0;
+  padding: 10px 10px 10px 25px;
+  margin: 0;
   border: 3px solid var(--primary-text-color);
+  font-size: 14px;
+  text-transform: capitalize;
+  position: relative;
 }
 
-.category {
-  background-color: #6D7FDE;
+/* .music-labels li:before {
+  background-color: blue;
+} */
+
+/* .category {
+  background: #1770e5;
+} */
+
+.music-labels li:before {
+  background-color: #ffda00;
+  height: 100%;
+  width: 15px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-right: 3px solid black;
 }
 
-.category:first-child {
-  background-color: #FFF73E;
+.category:first-child:before {
+  background-color: #1770e5;
 }
 
-.category:nth-child(2n) {
-  background-color: #ff433e;
+.category:nth-child(2n):before  {
+  background: #ff433e;
 }
 
-.category:nth-child(3n) {
-  background-color: #6DDE9A;
+.category:nth-child(3n):before  {
+  background: #6DDE9A;
 }
 
-.category:nth-child(4n) {
+/* #55575b */
+
+/* .category:nth-child(4n) {
   background-color: #d16dde;
-}
+} */
 
 /* PAGE */
 
 .page {
   background-color: var(--body-background-color);
+  max-width: 1400px;
+  margin: auto;
 }
 
 .page h2 {
@@ -202,14 +240,14 @@ h1 {
 }
 
 .page-header {
-  background-color: var(--accent-color);
+  background-color: var(--primary-text-color);
   padding: 30px;
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .page-header a {
-  color: var(--primary-text-color);
+  color: white;
 }
 
 .page-content {
@@ -230,6 +268,7 @@ h1 {
   width: auto;
   height: 250px;
   border: 0;
+  border-right: 3px solid var(--primary-text-color);
 }
 
 hr {
@@ -293,18 +332,19 @@ hr {
 
 footer {
   max-width: 1400px;
-  margin: 0 auto;
-  background-color: var(--secondary-color);
+  margin: 0 auto 30px auto;
+  background-color: #1770e5;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white;
 }
 
 .footer-link a {
   background-color: var(--primary-text-color);
   padding: 10px 25px;
-  color: var(--secondary-color);
+  color: white;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
@@ -352,6 +392,7 @@ footer {
     width: auto;
     height: 400px;
     border: 0;
+    border-right: 3px solid var(--primary-text-color);
   }
 }
 
@@ -359,7 +400,7 @@ footer {
   .album-container {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
   }
   .album-page-header {
@@ -377,3 +418,9 @@ footer {
   width: auto;
   height: 300px;
 } */
+
+.hero-image {
+  background-repeat: repeat-x;
+  background-size: 795px;
+  display: none;
+}

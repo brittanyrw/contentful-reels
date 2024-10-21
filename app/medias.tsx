@@ -12,6 +12,7 @@ export default function medias({ posts }: { posts: any[] } ) {
             slug={post.slug}
             type={post.type}
             attendeeCompany={post.attendeeCompany}
+            genres={post.genres}
           />
         ))}
       </section>

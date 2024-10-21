@@ -45,9 +45,8 @@ export default async function PostPage({
                 attendeeName={post.attendeeName}
                 yearReleased={post.yearReleased}
                 type={post.type}
+                genres={post.genres}
               />
-              <div className="rich-text-content">
-            </div>
             </article>
             <hr />
             {morePosts && morePosts.length > 0 && (
