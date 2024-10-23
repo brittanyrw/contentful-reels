@@ -73,41 +73,41 @@ h1 {
 
 /* ALBUMS */
 
-.album-container {
+.media-container {
   background-color: white;
   text-align: center;
   display: grid;
   grid-gap: 35px;
 }
 
-.album {
+.media {
   padding: 20px;
   color: var(--primary-text-color);
   text-align: left;
   position: relative;
 }
 
-.album a {
+.media a {
   color: var(--primary-text-color);
   font-size: 25px;
   text-decoration: none;
 }
 
-.album-month {
+.media-month {
   text-transform: uppercase;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-.album-title {
+.media-title {
   margin-bottom: 10px;
 }
 
-.album-cover {
+.media-cover {
   height: 100%;
 }
 
-.album-cover-wrapper, .album-title {
+.media-cover-wrapper, .media-title {
   cursor: pointer;
 }
 
@@ -146,7 +146,7 @@ h1 {
   color: #1D1D1D;
 }
 
-.home-albums .album-container {
+.home-medias .media-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -154,7 +154,7 @@ h1 {
   align-items: stretch;
 }
 
-.home-albums .album {
+.home-medias .media {
   background-color: white;
   border: 3px solid var(--primary-text-color);
   /* box-shadow: 5px 5px white, 7px 7px black, 12px 12px white, 13px 13px black; */
@@ -165,22 +165,22 @@ h1 {
   border-radius: 7px;
 }
 
-.home-albums .album-cover-wrapper {
+.home-medias .media-cover-wrapper {
   padding: 15px;
 }
 
-.home-albums .album-details-text {
+.home-medias .media-details-text {
   padding: 0 15px 15px 15px;
 }
 
-.album-content {
+.media-content {
   width: 300px;
   position: relative;
 }
 
 /* ALBUM PAGE */
 
-.music-labels {
+.show-labels {
   list-style-type: none;
   padding: 0;
   display: flex;
@@ -189,7 +189,7 @@ h1 {
   margin-top: 10px;
 }
 
-.music-labels li {
+.show-labels li {
   padding: 10px 10px 10px 25px;
   margin: 0;
   border: 3px solid var(--primary-text-color);
@@ -198,7 +198,7 @@ h1 {
   position: relative;
 }
 
-/* .music-labels li:before {
+/* .show-labels li:before {
   background-color: blue;
 } */
 
@@ -206,7 +206,7 @@ h1 {
   background: #1770e5;
 } */
 
-.music-labels li:before {
+.show-labels li:before {
   background-color: #ffda00;
   height: 100%;
   width: 15px;
@@ -271,12 +271,12 @@ h1 {
   display: none;
 }
 
-.page .album-page-header .album-cover-wrapper {
+.page .media-page-header .media-cover-wrapper {
   height: 250px;
   width: 250px;
 }
 
-.page .album-page-header .album-cover-wrapper img {
+.page .media-page-header .media-cover-wrapper img {
   width: auto;
   height: 250px;
   border: 0;
@@ -288,19 +288,19 @@ hr {
   margin: 20px 0;
 }
 
-.album-thoughts {
+.media-thoughts {
   padding: 30px;
 }
 
-.album-page-title {
+.media-page-title {
   font-size: 40px;
 }
 
-.album-page-subtitle {
+.media-page-subtitle {
   font-size: 40px;
 }
 
-.album-page-header {
+.media-page-header {
   border-bottom: 5px solid var(--primary-text-color);
   align-items: center;
   justify-content: center;
@@ -309,19 +309,19 @@ hr {
     flex-wrap: wrap;
 }
 
-.album-page-header span:first-of-type {
+.media-page-header span:first-of-type {
   height: 100% !important;
   display: block !important;
 }
 
-.album-page-info {
+.media-page-info {
   display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 30px;
 }
 
-.album-page-info h2 {
+.media-page-info h2 {
   text-transform: uppercase;
   font-weight: 500;
   margin: 0;
@@ -364,7 +364,7 @@ footer {
 }
 
 @media screen and (max-width: 425px) {
-  .home-albums .album {
+  .home-medias .media {
     justify-content: center;
   }
 }
@@ -375,7 +375,7 @@ footer {
     margin: 30px;
   }
 
-  .home-albums .album-month {
+  .home-medias .media-month {
     padding: 0 15px 15px 15px;
     margin: 0;
     writing-mode: vertical-lr;
@@ -385,23 +385,23 @@ footer {
     padding: 22px 0;
   }
 
-  .home-albums .album-container {
+  .home-medias .media-container {
     padding: 50px 0;
   }
  
-  .album-page-title {
+  .media-page-title {
     font-size: 60px;
   }
-  .album-page-header {
+  .media-page-header {
     flex-direction: row;
   }
 
-  .page .album-page-header .album-cover-wrapper {
+  .page .media-page-header .media-cover-wrapper {
     height: 400px;
     width: 400px;
   }
   
-  .page .album-page-header .album-cover-wrapper img {
+  .page .media-page-header .media-cover-wrapper img {
     width: auto;
     height: 400px;
     border: 0;
@@ -410,19 +410,19 @@ footer {
 }
 
 @media screen and (min-width: 1200px) {
-  .album-container {
+  .media-container {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
     flex-wrap: wrap;
   }
-  .album-page-header {
+  .media-page-header {
     justify-content: flex-start;
     flex-wrap: nowrap;
     align-items: unset;
   }
 
-  .album-page-header .album-cover-wrapper {
+  .media-page-header .media-cover-wrapper {
     min-width: 400px;
   }
 }

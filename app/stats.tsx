@@ -1,16 +1,8 @@
-export default function Stats({ posts }: { posts: any[] }) {
-  // Calculate total items
-  const totalItems = posts.length;
-
-  // Calculate the number of movies
-  const movieCount = posts.filter(post => post.type === 'Movie').length;
-
-  // Calculate the number of TV shows
-  const tvShowCount = posts.filter(post => post.type === 'TV Show').length;
-
+export default function Stats({ posts, onGenreClick }: { posts: any[], onGenreClick: (genre: string) => void }) {
   // Calculate the stats for genres
   const genreCount: { [key: string]: number } = {};
-  
+
+  // Iterate over posts and count occurrences of each genre
   posts.forEach(post => {
     post.genres.forEach((genre: string) => {
       if (genreCount[genre]) {
@@ -21,10 +13,16 @@ export default function Stats({ posts }: { posts: any[] }) {
     });
   });
 
+  // Sort genres by the count, descending
   const sortedGenres = Object.entries(genreCount).sort((a, b) => b[1] - a[1]);
 
+  // Calculate other stats (as before)
+  const totalItems = posts.length;
+  const movieCount = posts.filter(post => post.type === 'Movie').length;
+  const tvShowCount = posts.filter(post => post.type === 'TV Show').length;
+
+  // Calculate the most added movie/show (sanitized)
   const titleCount: { [key: string]: number } = {};
-  
   posts.forEach(post => {
     const sanitizedTitle = post.title.toLowerCase(); // Case-insensitive matching
     if (titleCount[sanitizedTitle]) {
@@ -73,7 +71,7 @@ export default function Stats({ posts }: { posts: any[] }) {
       </ul>
       <ul className="stats genre-stats">
         {sortedGenres.map(([genre, count]) => (
-          <li key={genre} className="stat">
+          <li key={genre} className="stat" onClick={() => onGenreClick(genre)}>
             <p className="stat-number">{count}</p>
             <p className="stat-name">{genre}</p>
           </li>

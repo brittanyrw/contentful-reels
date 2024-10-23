@@ -1,21 +1,18 @@
-import Link from 'next/link'
-import { draftMode } from 'next/headers'
-import ContentfulImage from "../lib/contentful-image"
+import Link from 'next/link';
+import Medias from './medias';
+import Stats from './stats';
+import Shapes from "../assets/shapes.svg";
+import { getAllMediaPosts } from '@/lib/api';
+import FilteredMedias from './filtered-medias'; // Import the FilteredMedias component
 
-import Shapes from "../assets/shapes.svg"
-import Medias from './medias'
-import Stats from './stats'
-
-
-import { getAllMediaPosts } from '@/lib/api'
 
 function Intro() {
   return (
     <section className="hero">
       <div className="hero-image" style={{
-      backgroundImage: `url(${Shapes.src})`,
-      height: '100px',
-    }}></div>
+        backgroundImage: `url(${Shapes.src})`,
+        height: '100px',
+      }}></div>
       <h1 className="title">
         <Link href="/">
           Contentful Reels.
@@ -24,22 +21,17 @@ function Intro() {
       <p className="intro">
         Collection of the TV shows and movies React Advanced attendees love. ❤️
       </p>
-
     </section>
   )
 }
 
 export default async function Page() {
-  const { isEnabled } = draftMode()
-  const allPosts = await getAllMediaPosts(isEnabled)
+  const allPosts = await getAllMediaPosts(); // Keep this in the server component
 
   return (
     <div>
       <Intro />
-      <Stats posts={allPosts}/>
-      <section className="home-albums">
-        <Medias posts={allPosts} />
-      </section>
+      <FilteredMedias posts={allPosts} />
     </div>
-  )
+  );
 }

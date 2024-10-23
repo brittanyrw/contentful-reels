@@ -21,8 +21,8 @@ export default function MediaCard({
   genres: any
 }) {
   return (
-    <div className="album">
-      <div className="album-content">
+    <div className="media">
+      <div className="media-content">
         {/* {attendeeCompany == "Contentful" && <div className="favorite">
           <ContentfulImage
             src={FavoriteImage}
@@ -32,13 +32,13 @@ export default function MediaCard({
           />
           </div>} */}
         <CoverImage title={title} url={coverImage} slug={slug} />
-        <div className="album-info">
-          <div className="album-details">
-            <div className="album-details-text">
+        <div className="media-info">
+          <div className="media-details">
+            <div className="media-details-text">
               <Link href={`/posts/${slug}`}>
-                <h4 className="album-title">{title} ({yearReleased})</h4>
+                <h4 className="media-title">{title} ({yearReleased})</h4>
               </Link>
-              <ul className="music-labels">
+              <ul className="show-labels">
                 {genres?.map((item: string) => <li className="category" key={item}>{item}</li>)}
               </ul>
             </div>

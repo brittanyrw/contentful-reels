@@ -11,12 +11,12 @@ export default function PostHeader({ title, coverImage, attendeeName, yearReleas
 }) {
   return (
     <>
-      <div className="album-page-header">
+      <div className="media-page-header">
         <CoverImage title={title} url={coverImage} />
-        <div className="album-page-info">
+        <div className="media-page-info">
           <h1>{title} ({yearReleased})</h1>
-          <p className="album-page-subtitle">Added by: {attendeeName}</p>
-          <ul className="music-labels">
+          <p className="media-page-subtitle">Added by: {attendeeName}</p>
+          <ul className="show-labels">
             <li>{ type }</li>
             {genres?.map((item: string) => <li className="category" key={item}>{item}</li>)}
           </ul>
