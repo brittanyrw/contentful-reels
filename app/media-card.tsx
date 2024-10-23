@@ -23,14 +23,14 @@ export default function MediaCard({
   return (
     <div className="album">
       <div className="album-content">
-        {attendeeCompany == "Contentful" && <div className="favorite">
+        {/* {attendeeCompany == "Contentful" && <div className="favorite">
           <ContentfulImage
             src={FavoriteImage}
             height="100"
             className="rounded-full"
             alt="favorite image tag"
           />
-          </div>}
+          </div>} */}
         <CoverImage title={title} url={coverImage} slug={slug} />
         <div className="album-info">
           <div className="album-details">

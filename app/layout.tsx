@@ -1,12 +1,15 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 import Shapes from "../assets/Shapes2.svg"
+import { Poppins, Roboto_Flex } from 'next/font/google';
 
-const inter = Inter({
-  variable: '--font-inter',
+
+const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
-})
+  variable: '--font-poppins',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+});
+ 
 
 function Footer() {
   return (
@@ -28,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${poppins.variable}`}>
       <body style={{
       backgroundImage: `url(${Shapes.src})`,
       height: '100px',

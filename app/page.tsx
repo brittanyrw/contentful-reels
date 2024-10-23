@@ -4,6 +4,7 @@ import ContentfulImage from "../lib/contentful-image"
 
 import Shapes from "../assets/shapes.svg"
 import Medias from './medias'
+import Stats from './stats'
 
 
 import { getAllMediaPosts } from '@/lib/api'
@@ -15,12 +16,6 @@ function Intro() {
       backgroundImage: `url(${Shapes.src})`,
       height: '100px',
     }}></div>
-      {/* <ContentfulImage
-            src={Shapes}
-            height="100"
-            className="rounded-full"
-            alt="favorite image tag"
-          /> */}
       <h1 className="title">
         <Link href="/">
           Contentful Reels.
@@ -41,6 +36,7 @@ export default async function Page() {
   return (
     <div>
       <Intro />
+      <Stats posts={allPosts}/>
       <section className="home-albums">
         <Medias posts={allPosts} />
       </section>
