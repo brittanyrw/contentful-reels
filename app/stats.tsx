@@ -1,43 +1,41 @@
-export default function Stats({ posts, onGenreClick }: { posts: any[], onGenreClick: (genre: string) => void }) {
-  // Calculate the stats for genres
+export default function Stats({
+  posts,
+  selectedGenre,
+  onGenreClick,
+  onResetFilter
+}: {
+  posts: any[],
+  selectedGenre: string | null,
+  onGenreClick: (genre: string) => void,
+  onResetFilter: () => void
+}) {
+  // Calculate genre statistics
   const genreCount: { [key: string]: number } = {};
 
-  // Iterate over posts and count occurrences of each genre
   posts.forEach(post => {
     post.genres.forEach((genre: string) => {
-      if (genreCount[genre]) {
-        genreCount[genre] += 1;
-      } else {
-        genreCount[genre] = 1;
-      }
+      genreCount[genre] = (genreCount[genre] || 0) + 1;
     });
   });
 
-  // Sort genres by the count, descending
   const sortedGenres = Object.entries(genreCount).sort((a, b) => b[1] - a[1]);
 
-  // Calculate other stats (as before)
   const totalItems = posts.length;
   const movieCount = posts.filter(post => post.type === 'Movie').length;
   const tvShowCount = posts.filter(post => post.type === 'TV Show').length;
-
-  // Calculate the most added movie/show (sanitized)
   const titleCount: { [key: string]: number } = {};
+  
   posts.forEach(post => {
-    const sanitizedTitle = post.title.toLowerCase(); // Case-insensitive matching
-    if (titleCount[sanitizedTitle]) {
-      titleCount[sanitizedTitle] += 1;
-    } else {
-      titleCount[sanitizedTitle] = 1;
-    }
+    const sanitizedTitle = post.title.toLowerCase();
+    titleCount[sanitizedTitle] = (titleCount[sanitizedTitle] || 0) + 1;
   });
 
-  const mostAddedTitle = Object.entries(titleCount).reduce((prev, current) => {
-    return current[1] > prev[1] ? current : prev;
-  }, ["", 0]);
+  const mostAddedTitle = Object.entries(titleCount).reduce((prev, current) => 
+    current[1] > prev[1] ? current : prev, ["", 0]
+  );
 
   const totalReleaseYear = posts.reduce((sum, post) => sum + post.yearReleased, 0);
-  const averageReleaseYear = (totalItems > 0) ? Math.round(totalReleaseYear / totalItems) : "N/A";
+  const averageReleaseYear = totalItems > 0 ? Math.round(totalReleaseYear / totalItems) : "N/A";
 
   return (
     <section className="stats-container container">
@@ -69,14 +67,28 @@ export default function Stats({ posts, onGenreClick }: { posts: any[], onGenreCl
           <p className="stat-name">Average Release Year</p>
         </li>
       </ul>
+      
+      {/* Genre stats with filter info */}
       <ul className="stats genre-stats">
         {sortedGenres.map(([genre, count]) => (
-          <li key={genre} className="stat" onClick={() => onGenreClick(genre)}>
+          <li 
+            key={genre} 
+            className={`stat ${selectedGenre === genre ? 'active' : ''}`} 
+            onClick={() => onGenreClick(genre)}
+          >
             <p className="stat-number">{count}</p>
             <p className="stat-name">{genre}</p>
           </li>
         ))}
       </ul>
+      
+      {/* Filter Info: Show only when a genre is selected */}
+      {selectedGenre && (
+        <div className="filter-info">
+          <p>Filtering by: <strong>{selectedGenre}</strong></p>
+          <button onClick={onResetFilter}>Clear Filter</button>
+        </div>
+      )}
     </section>
   );
 }

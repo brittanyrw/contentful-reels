@@ -21,7 +21,7 @@ body {
   font-family: var(--font-poppins);
   font-size: 21px;
   background-color: var(--body-background-color);
-  background-size: 30%;
+  /* background-size: 30%; */
   /* background: linear-gradient(-45deg, #2b2d31,#ffda00, #e44f20, #1770e5, #00c459);
 	background-size: 300% 300%;
 	animation: gradient 15s ease infinite; */
@@ -77,14 +77,18 @@ h1 {
   background-color: white;
   text-align: center;
   display: grid;
-  grid-gap: 35px;
+  /* grid-gap: 35px; */
 }
 
 .media {
   padding: 20px;
   color: var(--primary-text-color);
   text-align: left;
-  position: relative;
+  
+}
+
+.media img {
+  border: 3px solid var(--primary-text-color);
 }
 
 .media a {
@@ -155,14 +159,29 @@ h1 {
 }
 
 .home-medias .media {
-  background-color: white;
-  border: 3px solid var(--primary-text-color);
+  /* background-color: white;
+  border: 3px solid var(--primary-text-color); */
   /* box-shadow: 5px 5px white, 7px 7px black, 12px 12px white, 13px 13px black; */
   /* max-width: 350px; */
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   border-radius: 7px;
+  position: relative;
+  height: 447px;
+  width: 300px;
+}
+
+.album-cover-wrapper {
+  height: 447px;
+  width: 300px;
+  position: relative;
+}
+
+.media a {
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 .home-medias .media-cover-wrapper {
@@ -412,7 +431,7 @@ footer {
 @media screen and (min-width: 1200px) {
   .media-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
   }
@@ -434,8 +453,7 @@ footer {
 
 .hero-image {
   background-repeat: repeat-x;
-  background-size: 795px;
-  display: none;
+  background-size: 808px;
 }
 
 .stats-container {
@@ -466,33 +484,33 @@ footer {
 .stat {
   padding: 15px;
   border: 2px solid white;
-  box-shadow: 2px 2px white, 4px 4px #1f1f1f, 6px 6px white;
+  box-shadow: 2px 2px white;
   border-radius: 7px;
   margin: 10px;
   color: white;
 }
 
 .stat.stat-blue {
-  border: 2px solid #1770e5;
-  box-shadow: 2px 2px #1770e5, 4px 4px #1f1f1f, 6px 6px #1770e5;
-  color: #1770e5;
+  border: 2px solid #3081ec;
+  box-shadow: 2px 2px #3081ec;
+  color: #3081ec;
 }
 
 .stat.stat-red {
   border: 2px solid #ff433e;
-  box-shadow: 2px 2px #ff433e, 4px 4px #1f1f1f, 6px 6px #ff433e;
+  box-shadow: 2px 2px #ff433e;
   color: #ff433e;
 }
 
 .stat.stat-green {
   border: 2px solid #6DDE9A;
-  box-shadow: 2px 2px #6DDE9A, 4px 4px #1f1f1f, 6px 6px #6DDE9A;
+  box-shadow: 2px 2px #6DDE9A;
   color: #6DDE9A;
 }
 
 .stat.stat-yellow {
   border: 2px solid #ffda00;
-  box-shadow: 2px 2px #ffda00, 4px 4px #1f1f1f, 6px 6px #ffda00;
+  box-shadow: 2px 2px #ffda00;
   color: #ffda00;
 }
 

@@ -1,16 +1,16 @@
 import Link from 'next/link';
 import Medias from './medias';
 import Stats from './stats';
-import Shapes from "../assets/shapes.svg";
+import Header from "../assets/header.svg";
 import { getAllMediaPosts } from '@/lib/api';
-import FilteredMedias from './filtered-medias'; // Import the FilteredMedias component
+import FilteredMedias from './filtered-medias';
 
 
 function Intro() {
   return (
     <section className="hero">
       <div className="hero-image" style={{
-        backgroundImage: `url(${Shapes.src})`,
+        backgroundImage: `url(${Header.src})`,
         height: '100px',
       }}></div>
       <h1 className="title">
@@ -26,7 +26,7 @@ function Intro() {
 }
 
 export default async function Page() {
-  const allPosts = await getAllMediaPosts(); // Keep this in the server component
+  const allPosts = await getAllMediaPosts(false); // Keep this in the server component
 
   return (
     <div>

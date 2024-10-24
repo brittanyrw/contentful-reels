@@ -32,10 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${poppins.variable}`}>
-      <body style={{
-      backgroundImage: `url(${Shapes.src})`,
-      height: '100px',
-    }} suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true}>
         <section>
           <main>{children}</main>
           <Footer />

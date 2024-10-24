@@ -34,14 +34,14 @@ export default function MediaCard({
         <CoverImage title={title} url={coverImage} slug={slug} />
         <div className="media-info">
           <div className="media-details">
-            <div className="media-details-text">
+            {/* <div className="media-details-text">
               <Link href={`/posts/${slug}`}>
                 <h4 className="media-title">{title} ({yearReleased})</h4>
               </Link>
               <ul className="show-labels">
                 {genres?.map((item: string) => <li className="category" key={item}>{item}</li>)}
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
