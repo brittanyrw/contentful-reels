@@ -31,7 +31,7 @@ function Intro() {
 }
 
 export default async function Page() {
-  const allPosts = await getAllMediaPosts(); // Keep this in the server component
+  const allPosts = await getAllMediaPosts(true); // Keep this in the server component
 
   // Filter to exclude anyone from Contentful
   const eligibleRaffleEntries = allPosts.filter(post => post.attendeeCompany !== 'Contentful');
