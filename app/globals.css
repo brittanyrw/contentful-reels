@@ -618,3 +618,17 @@ padding-top: 30px;
   font-weight: normal;
   color: white;
 }
+
+.stat-yellow:hover {
+  box-shadow: 2px 2px var(--primary-text-color), 5px 5px #ffda00;
+  transition: .5s;
+}
+
+.stat-red:hover {
+  box-shadow: 2px 2px var(--primary-text-color), 5px 5px #ff433e;
+  transition: .5s;
+}
+
+.stat-yellow, .stat-red {
+  cursor: pointer;
+}

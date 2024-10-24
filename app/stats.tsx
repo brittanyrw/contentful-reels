@@ -1,28 +1,36 @@
 export default function Stats({
   posts,
   selectedGenre,
+  selectedType,
   onGenreClick,
+  onTypeClick,
   onResetFilter
 }: {
   posts: any[],
   selectedGenre: string | null,
+  selectedType: string | null,
   onGenreClick: (genre: string) => void,
+  onTypeClick: (type: string) => void,
   onResetFilter: () => void
 }) {
   // Calculate genre statistics
   const genreCount: { [key: string]: number } = {};
+  const typeCount: { [key: string]: number } = { Movie: 0, "TV Show": 0 };
 
   posts.forEach(post => {
     post.genres.forEach((genre: string) => {
       genreCount[genre] = (genreCount[genre] || 0) + 1;
     });
+    if (post.type in typeCount) {
+      typeCount[post.type] += 1;
+    }
   });
 
   const sortedGenres = Object.entries(genreCount).sort((a, b) => b[1] - a[1]);
 
   const totalItems = posts.length;
-  const movieCount = posts.filter(post => post.type === 'Movie').length;
-  const tvShowCount = posts.filter(post => post.type === 'TV Show').length;
+  const movieCount = typeCount.Movie;
+  const tvShowCount = typeCount["TV Show"];
   const titleCount: { [key: string]: number } = {};
   
   posts.forEach(post => {
@@ -44,11 +52,17 @@ export default function Stats({
           <p className="stat-number">{totalItems}</p>
           <p className="stat-name">Total Items</p>
         </li>
-        <li className="stat stat-yellow">
+        <li 
+          className={`stat stat-yellow ${selectedType === 'Movie' ? 'active' : ''}`} 
+          onClick={() => onTypeClick('Movie')}
+        >
           <p className="stat-number">{movieCount}</p>
           <p className="stat-name">Movies</p>
         </li>
-        <li className="stat stat-red">
+        <li 
+          className={`stat stat-red ${selectedType === 'TV Show' ? 'active' : ''}`} 
+          onClick={() => onTypeClick('TV Show')}
+        >
           <p className="stat-number">{tvShowCount}</p>
           <p className="stat-name">TV Shows</p>
         </li>
@@ -82,10 +96,10 @@ export default function Stats({
         ))}
       </ul>
       
-      {/* Filter Info: Show only when a genre is selected */}
-      {selectedGenre && (
+      {/* Filter Info: Show only when a genre or type is selected */}
+      {(selectedGenre || selectedType) && (
         <div className="filter-info">
-          <p>Filtering by: <strong>{selectedGenre}</strong></p>
+          <p>Filtering by: <strong>{selectedGenre || selectedType}</strong></p>
           <button className="filter-button" onClick={onResetFilter}>Clear Filter</button>
         </div>
       )}

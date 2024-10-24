@@ -5,6 +5,12 @@ import Shapes from "../assets/header.svg";
 import { getAllMediaPosts } from '@/lib/api';
 import FilteredMedias from './filtered-medias'; // Import the FilteredMedias component
 
+import type { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Contentful Reels'
+}
+
 function Intro() {
   return (
     <section className="hero">
