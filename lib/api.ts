@@ -10,6 +10,7 @@ type
 attendeeName
 attendeeCompany
 genres
+raffleEntry
 `
 
 async function fetchGraphQL(query: string, preview = false): Promise<any> {
