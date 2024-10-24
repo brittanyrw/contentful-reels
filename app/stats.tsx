@@ -58,13 +58,13 @@ export default function Stats({
             <p className="stat-number stat-most-added">
               {mostAddedTitle[0]} ({mostAddedTitle[1]})
             </p>
-            <p className="stat-name">Most Added Movie/Show</p>
+            <p className="stat-name">Most Added</p>
           </li>
         )}
 
         <li className="stat stat-blue">
           <p className="stat-number">{averageReleaseYear}</p>
-          <p className="stat-name">Average Release Year</p>
+          <p className="stat-name">Avg Release Year</p>
         </li>
       </ul>
       
