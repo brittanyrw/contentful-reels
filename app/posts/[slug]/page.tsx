@@ -27,7 +27,7 @@ export default async function PostPage({
       <section className="page-header">
           <h2>
             <Link href="/">
-              <p className="header-link">👈🏾 Back to List</p>
+              <p className="header-link">Back to Home</p>
             </Link>
           </h2>
         </section>

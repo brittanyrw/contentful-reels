@@ -86,7 +86,7 @@ export default function Stats({
       {selectedGenre && (
         <div className="filter-info">
           <p>Filtering by: <strong>{selectedGenre}</strong></p>
-          <button onClick={onResetFilter}>Clear Filter</button>
+          <button className="filter-button" onClick={onResetFilter}>Clear Filter</button>
         </div>
       )}
     </section>

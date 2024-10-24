@@ -40,7 +40,7 @@ body {
 } */
 
 main {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: auto;
   border: 3px solid var(--primary-text-color);
   border-radius: 3px 3px 0 0;
@@ -61,7 +61,7 @@ h1 {
 }
 
 .container, .hero {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -258,7 +258,7 @@ h1 {
 
 .page {
   background-color: var(--body-background-color);
-  max-width: 1400px;
+  max-width: 1600px;
   margin: auto;
 }
 
@@ -273,7 +273,7 @@ h1 {
 .page-header {
   background-color: var(--primary-text-color);
   padding: 30px;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
@@ -282,7 +282,7 @@ h1 {
 }
 
 .page-content {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 20px auto;
 }
 
@@ -302,8 +302,13 @@ h1 {
   border-right: 3px solid var(--primary-text-color);
 }
 
+.media-page-header img {
+  height: 100%;
+  border-right: 3px solid var(--primary-text-color);
+}
+
 hr {
-  border: 10px solid var(--accent-color);
+  border: 10px solid #2885ff;
   margin: 20px 0;
 }
 
@@ -316,7 +321,7 @@ hr {
 }
 
 .media-page-subtitle {
-  font-size: 40px;
+  font-size: 21px;
 }
 
 .media-page-header {
@@ -362,14 +367,14 @@ hr {
 /* FOOTER */
 
 footer {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto 30px auto;
-  background-color: #3e4044;
+  background-color: white;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: var(--primary-text-color);
   border: 3px solid var(--primary-text-color);
 }
 
@@ -473,12 +478,13 @@ footer {
 }
 
 .stat-number {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bold;
 }
 
 .stat-name {
-  font-size: 21px;
+  font-size: 27px;
+  font-weight: bold;
 }
 
 .stat {
@@ -491,9 +497,9 @@ footer {
 }
 
 .stat.stat-blue {
-  border: 2px solid #3081ec;
-  box-shadow: 2px 2px #3081ec;
-  color: #3081ec;
+  border: 2px solid #2885ff;
+  box-shadow: 2px 2px #2885ff;
+  color: #2885ff;
 }
 
 .stat.stat-red {
@@ -530,6 +536,12 @@ padding-top: 30px;
     flex-direction: row-reverse;
     align-items: center;
     padding: 0;
+    cursor: pointer;
+}
+
+.genre-stats .stat:hover {
+  box-shadow: 2px 2px var(--primary-text-color), 5px 5px white;
+  transition: .5s;
 }
 
 .genre-stats .stat-number {
@@ -543,4 +555,28 @@ padding-top: 30px;
 
 .genre-stats .stat-name {
   padding: 10px;
+  font-size: 21px;
+  font-weight: normal;
+}
+
+.filter-info {
+  color: white;
+  text-align: center;
+}
+
+.filter-info button {
+  padding: 15px;
+  font-size: 21px;
+  border: 3px solid var(--body-background-color);
+  background-color: white;
+  margin: 10px;
+  color: var(--body-background-color);
+  cursor: pointer;
+}
+
+.filter-info .filter-button:hover {
+  background-color: var(--body-background-color);
+  color: white;
+  border: 3px solid white;
+  transition: .5s;
 }
