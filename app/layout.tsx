@@ -1,6 +1,8 @@
 import './globals.css'
 import Shapes from "../assets/Shapes2.svg"
 import { Poppins, Roboto_Flex } from 'next/font/google';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 
 
 const poppins = Poppins({
@@ -35,6 +37,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={true}>
         <section>
           <main>{children}</main>
+          <SpeedInsights />
           <Footer />
         </section>
       </body>
