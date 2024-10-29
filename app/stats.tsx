@@ -18,7 +18,7 @@ export default function Stats({
   const typeCount: { [key: string]: number } = { Movie: 0, "TV Show": 0 };
 
   posts.forEach(post => {
-    post.genres.forEach((genre: string) => {
+    post.genres?.forEach((genre: string) => {
       genreCount[genre] = (genreCount[genre] || 0) + 1;
     });
     if (post.type in typeCount) {

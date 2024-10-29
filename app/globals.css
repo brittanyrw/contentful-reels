@@ -86,9 +86,20 @@ h1 {
 .media-container {
   background-color: white;
   text-align: center;
-  display: grid;
-  /* grid-gap: 35px; */
+  display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+/* 
+@media screen and (max-width: 992px) {
+  .media-container {
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+} */
 
 .media {
   padding: 20px;
@@ -494,9 +505,21 @@ footer {
   font-weight: bold;
 }
 
+@media screen and (max-width: 425px) {
+  .stat-number {
+    font-size: 30px;
+  }
+}
+
 .stat-name {
   font-size: 27px;
   font-weight: bold;
+}
+
+@media screen and (max-width: 425px) {
+  .stat-name {
+    font-size: 16px;
+  }
 }
 
 .stat {
@@ -506,6 +529,13 @@ footer {
   border-radius: 7px;
   margin: 10px;
   color: white;
+}
+
+@media screen and (max-width: 425px) {
+  .stat {
+    padding: 10px;
+    margin: 5px;
+  }
 }
 
 .stat.stat-blue {
@@ -571,6 +601,13 @@ padding-top: 30px;
   font-weight: normal;
 }
 
+@media screen and (max-width: 425px) {
+  .genre-stats .stat-name, .genre-stats .stat-number {
+    font-size: 16px;
+    padding: 7px;
+  }
+}
+
 .filter-info {
   color: white;
   text-align: center;
@@ -603,8 +640,9 @@ padding-top: 30px;
   border-radius: 0;
   padding: 15px;
   font-size: 21px;
-  width: 600px;
+  max-width: 600px;
   border: 0;
+  width: 100%;
 }
 
 .raffle-section {

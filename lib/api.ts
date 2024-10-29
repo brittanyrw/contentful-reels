@@ -11,6 +11,9 @@ attendeeName
 attendeeCompany
 genres
 raffleEntry
+sys {
+  id
+}
 `
 
 async function fetchGraphQL(query: string, preview = false): Promise<any> {
